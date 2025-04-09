@@ -90,7 +90,7 @@
                 margin-left: 30px;
                 width: 50%;
             }
-
+        }
             .product-ex {
                 width: 50%;
                 display: flex;
@@ -98,7 +98,8 @@
                 text-align: center;
                 align-items: center;
                 margin-left: 100px;
-color: rgb(248, 202, 146);
+                color: rgb(248, 202, 146);
+
                 h3 {
                     font-size: 60px;
                     margin-bottom: 50px;
@@ -112,45 +113,146 @@ color: rgb(248, 202, 146);
                     padding: 19px;
                     color: rgb(255, 162, 49);
                 }
+
                 p {
                     margin-top: 45px;
                     font-size: 20px;
                     color: rgb(77, 76, 75);
                 }
-                s{
-                    font-size: 19px;;
+
+                s {
+                    font-size: 19px;
                     color: rgb(153, 152, 152);
                 }
-                span{
+
+                span {
                     display: flex;
                     flex-direction: row;
                     width: 70%;
                     margin: auto;
                     justify-content: space-between;
                 }
-                button{
+
+                button {
                     width: 45%;
                     margin: auto;
-                    padding:15px;
+                    padding: 15px;
                     height: 70px;
                     font-size: 25px;
                     background-color: rgb(16, 170, 42);
                     color: rgb(213, 243, 218);
-                    border:none;
+                    border: none;
                     border-radius: 10px;
-                    box-shadow: 1px 1px 1px 2px  rgb(16, 114, 32);
+                    box-shadow: 1px 1px 1px 2px rgb(16, 114, 32);
                 }
-                button:hover{
+
+                button:hover {
                     background-color: rgb(25, 148, 46);
-                    color:rgb(51, 173, 69);
+                    color: rgb(51, 173, 69);
+                }
+                
+            }
+.detail{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom:10px;
+}
+            .section1{
+                width: 100%;
+                height:1200px;
+            }
+            .section1-product{
+                margin-top: 50px;
+                width: 95%;
+height:800px;
+margin:auto;
+background-image: url('field.jpg');
+background-size: 100vw 100vh;
+            }
+.explain{
+    margin:auto;
+    margin-bottom: 50px;
+}
+            @media (max-width:768px) {
+                *{
+                    width:100%;
+                }
+                header{
+                    width: 100%;
+                    margin: auto;
+                    img{
+                        width:20%;
+                    }
+                    h1{
+                        font-size: 40px;
+                        text-align: center;
+                    }
+                }
+                .menu{
+                    font-size: 28px;
+                }
+                main{
+                    .up{margin-top: 20px;
+                }
+                .cucumber{
+                    width: 45%;
+                    height: auto;
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                }
+                .product-ex{
+                    h3{
+                        font-size: 50px;
+                    }
+                    h4{
+                        font-size: 18px;
+                        padding:5px;
+                        margin-bottom:20px;
+                    }
+                    p{
+                      margin-top:10px;
+                      font-size: 16px;
+                      margin-bottom:10px;
+                    }
+                    s{
+                        font-size: 14px;
+                    }
+                    button{
+                        height:auto;
+                        font-size: 18px;
+                        padding:5px;
+                        margin-bottom: 15px;
+                    }
                 }
             }
         }
 
+        .explain{
+            width:90%;
+            padding:10px;
+            margin: auto;
+            text-align: center;
+            color: rgb(243, 163, 58);
+            h2{font-size: 33px;
+            text-align: center;
+            margin: auto;
+        }
+            p{
+                font-size: 60px;
+                color: rgb(32, 214, 93);
+            }
+        }
     </style>
 </head>
 
 <body>
+    <dialog>
+        <p>로그인</p>
+        <input type="text" placeholder="아이디 입력">
+        <input type="password" placeholder="비밀번호 입력">
+        <button type="button" class="login-btn">로그인</button>
+    </dialog>
+
     <header class="header">
         <span>
             <img src="ff.png" alt="">
@@ -178,19 +280,32 @@ color: rgb(248, 202, 146);
                     <p>권장 소비자 가격(세일가): <s>6,800</s>
                         5,000원</p>
                     <span class="buyit">
-                    <button class="buy-product" type="button">구매하기</button>
-                    <button class="cart-product" type="button">장바구니 담기</button>
-                </span>
+                        <button class="buy-btn" type="button">구매하기</button>
+                        <button class="cart-btn" type="button">장바구니</button>
+                    </span>
                 </div>
             </div>
         </div>
-        <section class="sec-1">
-            <div>
-            <p>제품 상세설명</p>
-            </div>
-        </section>
     </main>
     <hr>
+    <h2 class="detail">제품 상세설명</h2>
+    <section class="section1">
+    <div class="section1-product">
+</div>
+
+<div class="explain">
+    <h2>직접키운 오이가 키로당</h2>
+    <p>무려 5,000원!</p>
+</div>
+
+</section>
+    <script>
+        document.querySelector('.buy-btn').addEventListener('click',function(){document.querySelector('dialog').showModal();
+        })
+        document.querySelector('.login-btn').addEventListener('click',function(){
+            document.querySelector('dialog').close();
+        })
+    </script>
 </body>
 
 </html>
